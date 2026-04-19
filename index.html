@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>한국 정책평가 연구 지도 · Korea Policy Papers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Header ──────────────────────────────────────────────────────────── -->
+  <header>
+    <div class="header-left">
+      <div class="logo-mark">🇰🇷</div>
+      <div>
+        <h1>한국 정책평가 연구 지도</h1>
+        <span class="subtitle">Korea Policy Evaluation · Interactive Research Map</span>
+      </div>
+    </div>
+
+    <div class="header-center">
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 20 20" fill="none">
+          <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M13 13L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <input id="search" type="text" placeholder="논문, 연구자, 토픽 검색…" autocomplete="off" />
+        <kbd id="search-shortcut">⌘K</kbd>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="filters">
+        <button class="filter-btn active" data-type="all">전체</button>
+        <button class="filter-btn" data-type="topic">
+          <span class="filter-dot topic"></span>토픽
+        </button>
+        <button class="filter-btn" data-type="subtopic">
+          <span class="filter-dot subtopic"></span>서브토픽
+        </button>
+        <button class="filter-btn" data-type="paper">
+          <span class="filter-dot paper"></span>논문
+        </button>
+        <button class="filter-btn" data-type="researcher">
+          <span class="filter-dot researcher"></span>연구자
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Tag legend bar ───────────────────────────────────────────────────── -->
+  <div id="tag-bar">
+    <span class="tag-item"><span class="tag-flag">🇰🇷</span> 한국 데이터·정책 직접 분석</span>
+    <span class="tag-sep">·</span>
+    <span class="tag-item"><span class="tag-flag">🌐</span> 비교 가능한 유사 정책 (방법론 템플릿)</span>
+    <span class="tag-sep">·</span>
+    <span class="tag-item"><span class="tag-flag">📐</span> 핵심 방법론 논문</span>
+    <span class="tag-sep stat-right">드래그 · 스크롤 줌 · 클릭으로 탐색</span>
+  </div>
+
+  <!-- ── Stats bar ────────────────────────────────────────────────────────── -->
+  <div id="stats-bar">
+    <span id="stat-topics">— 토픽</span>
+    <span class="stat-sep">·</span>
+    <span id="stat-papers">— 논문</span>
+    <span class="stat-sep">·</span>
+    <span id="stat-researchers">— 연구자</span>
+    <span class="stat-sep">·</span>
+    <span id="stat-links">— 연결</span>
+  </div>
+
+  <!-- ── Main ─────────────────────────────────────────────────────────────── -->
+  <div id="main">
+    <div id="graph-container">
+      <svg id="graph"></svg>
+
+      <div id="zoom-controls">
+        <button id="zoom-in" title="확대">+</button>
+        <button id="zoom-out" title="축소">−</button>
+        <button id="zoom-reset" title="초기화">⌂</button>
+      </div>
+
+      <div id="loading">
+        <div class="spinner"></div>
+        <span>그래프 구성 중…</span>
+      </div>
+    </div>
+
+    <aside id="panel" class="hidden">
+      <div id="panel-header">
+        <div id="panel-type-badge"></div>
+        <button id="panel-close" title="닫기">✕</button>
+      </div>
+      <h2 id="panel-title"></h2>
+      <div id="panel-meta"></div>
+      <div id="panel-tag"></div>
+      <p id="panel-summary"></p>
+      <div id="panel-actions"></div>
+      <div id="panel-connected">
+        <div class="panel-section-label">연결된 노드</div>
+        <div id="panel-links"></div>
+      </div>
+    </aside>
+  </div>
+
+  <div id="legend">
+    <div class="legend-title">노드 유형</div>
+    <div class="legend-item"><span class="dot topic-dot"></span><span>정책 영역</span></div>
+    <div class="legend-item"><span class="dot subtopic-dot"></span><span>세부 주제</span></div>
+    <div class="legend-item"><span class="dot paper-dot"></span><span>논문</span></div>
+    <div class="legend-item"><span class="dot researcher-dot"></span><span>연구자</span></div>
+  </div>
+
+  <div id="tooltip" class="hidden"></div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="graph.js"></script>
+  <script src="search.js"></script>
+</body>
+</html>

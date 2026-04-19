@@ -1,7 +1,8 @@
 """
 Converts YAML ontology files → graph.json for D3.js visualization.
 Run: python scripts/build_graph.py
-Output: site/graph.json
+Output: graph.json (repo root, served by GitHub Pages)
+        site/graph.json (local dev copy)
 """
 
 import json
@@ -10,7 +11,8 @@ import os
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 ONTOLOGY = os.path.join(ROOT, "data", "ontology")
-OUT = os.path.join(ROOT, "site", "graph.json")
+OUT = os.path.join(ROOT, "graph.json")
+OUT_SITE = os.path.join(ROOT, "site", "graph.json")
 
 
 def load(filename):
@@ -79,12 +81,18 @@ def build():
                               "type": "authored"})
 
     graph = {"nodes": nodes, "links": links}
+    payload = json.dumps(graph, indent=2, ensure_ascii=False)
 
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(graph, f, indent=2, ensure_ascii=False)
+        f.write(payload)
 
-    print(f"Built graph: {len(nodes)} nodes, {len(links)} links → {OUT}")
+    os.makedirs(os.path.dirname(OUT_SITE), exist_ok=True)
+    with open(OUT_SITE, "w", encoding="utf-8") as f:
+        f.write(payload)
+
+    print(f"Built graph: {len(nodes)} nodes, {len(links)} links")
+    print(f"  → {OUT}")
+    print(f"  → {OUT_SITE}")
 
 
 if __name__ == "__main__":
