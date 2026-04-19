@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>한국 정책평가 연구 지도 · Korea Policy Papers</title>
+  <title>Korea Policy Evaluation — Research Map</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ── Header ──────────────────────────────────────────────────────────── -->
+  <!-- ── Header ──────────────────────────────────────────────────────── -->
   <header>
     <div class="header-left">
-      <div class="logo-mark">🇰🇷</div>
+      <div class="logo-mark"></div>
       <div>
-        <h1>한국 정책평가 연구 지도</h1>
-        <span class="subtitle">Korea Policy Evaluation · Interactive Research Map</span>
+        <h1>Korea Policy Evaluation</h1>
+        <span class="subtitle">Interactive Research Map · Top Journal Papers</span>
       </div>
     </div>
 
@@ -27,93 +27,115 @@
           <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.5"/>
           <path d="M13 13L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
-        <input id="search" type="text" placeholder="논문, 연구자, 토픽 검색…" autocomplete="off" />
+        <input id="search" type="text" placeholder="Search papers, researchers, topics…" autocomplete="off" />
         <kbd id="search-shortcut">⌘K</kbd>
       </div>
     </div>
 
     <div class="header-right">
       <div class="filters">
-        <button class="filter-btn active" data-type="all">전체</button>
+        <button class="filter-btn active" data-type="all">All</button>
         <button class="filter-btn" data-type="topic">
-          <span class="filter-dot topic"></span>토픽
+          <span class="filter-dot topic"></span>Topics
         </button>
         <button class="filter-btn" data-type="subtopic">
-          <span class="filter-dot subtopic"></span>서브토픽
+          <span class="filter-dot subtopic"></span>Subtopics
         </button>
         <button class="filter-btn" data-type="paper">
-          <span class="filter-dot paper"></span>논문
+          <span class="filter-dot paper"></span>Papers
         </button>
         <button class="filter-btn" data-type="researcher">
-          <span class="filter-dot researcher"></span>연구자
+          <span class="filter-dot researcher"></span>Researchers
         </button>
       </div>
     </div>
   </header>
 
-  <!-- ── Tag legend bar ───────────────────────────────────────────────────── -->
+  <!-- ── Tag legend bar ───────────────────────────────────────────────── -->
   <div id="tag-bar">
-    <span class="tag-item"><span class="tag-flag">🇰🇷</span> 한국 데이터·정책 직접 분석</span>
+    <span class="tag-item"><span class="tag-flag">🇰🇷</span> Korea data &amp; policy</span>
     <span class="tag-sep">·</span>
-    <span class="tag-item"><span class="tag-flag">🌐</span> 비교 가능한 유사 정책 (방법론 템플릿)</span>
+    <span class="tag-item"><span class="tag-flag">🌐</span> Comparable policy template</span>
     <span class="tag-sep">·</span>
-    <span class="tag-item"><span class="tag-flag">📐</span> 핵심 방법론 논문</span>
-    <span class="tag-sep stat-right">드래그 · 스크롤 줌 · 클릭으로 탐색</span>
+    <span class="tag-item"><span class="tag-flag">📐</span> Causal methods paper</span>
+    <span class="tag-sep stat-right">Drag · Scroll to zoom · Click to explore</span>
   </div>
 
-  <!-- ── Stats bar ────────────────────────────────────────────────────────── -->
+  <!-- ── Stats bar ────────────────────────────────────────────────────── -->
   <div id="stats-bar">
-    <span id="stat-topics">— 토픽</span>
+    <span id="stat-topics">— topics</span>
     <span class="stat-sep">·</span>
-    <span id="stat-papers">— 논문</span>
+    <span id="stat-papers">— papers</span>
     <span class="stat-sep">·</span>
-    <span id="stat-researchers">— 연구자</span>
+    <span id="stat-researchers">— researchers</span>
     <span class="stat-sep">·</span>
-    <span id="stat-links">— 연결</span>
+    <span id="stat-links">— connections</span>
   </div>
 
-  <!-- ── Main ─────────────────────────────────────────────────────────────── -->
+  <!-- ── Main ─────────────────────────────────────────────────────────── -->
   <div id="main">
+    <!-- Graph -->
     <div id="graph-container">
-      <svg id="graph"></svg>
+      <svg id="graph">
+        <defs>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+      </svg>
 
+      <!-- Zoom controls -->
       <div id="zoom-controls">
-        <button id="zoom-in" title="확대">+</button>
-        <button id="zoom-out" title="축소">−</button>
-        <button id="zoom-reset" title="초기화">⌂</button>
+        <button id="zoom-in" title="Zoom in">+</button>
+        <button id="zoom-out" title="Zoom out">−</button>
+        <button id="zoom-reset" title="Reset view">⌂</button>
       </div>
 
+      <!-- Loading overlay -->
       <div id="loading">
         <div class="spinner"></div>
-        <span>그래프 구성 중…</span>
+        <span>Building graph…</span>
       </div>
     </div>
 
+    <!-- Detail panel -->
     <aside id="panel" class="hidden">
       <div id="panel-header">
         <div id="panel-type-badge"></div>
-        <button id="panel-close" title="닫기">✕</button>
+        <button id="panel-close" title="Close">✕</button>
       </div>
       <h2 id="panel-title"></h2>
       <div id="panel-meta"></div>
-      <div id="panel-tag"></div>
-      <p id="panel-summary"></p>
+      <div id="panel-section"></div>
+      <div id="panel-abstract-wrap" class="hidden">
+        <div class="panel-abstract-header">
+          <span class="panel-section-label">ABSTRACT</span>
+          <a id="panel-abstract-link" href="#" target="_blank" rel="noopener" class="abstract-link hidden">↗ Full paper</a>
+        </div>
+        <p id="panel-summary"></p>
+      </div>
       <div id="panel-actions"></div>
       <div id="panel-connected">
-        <div class="panel-section-label">연결된 노드</div>
+        <div class="panel-section-label">CONNECTIONS</div>
         <div id="panel-links"></div>
       </div>
     </aside>
   </div>
 
+  <!-- ── Legend ───────────────────────────────────────────────────────── -->
   <div id="legend">
-    <div class="legend-title">노드 유형</div>
-    <div class="legend-item"><span class="dot topic-dot"></span><span>정책 영역</span></div>
-    <div class="legend-item"><span class="dot subtopic-dot"></span><span>세부 주제</span></div>
-    <div class="legend-item"><span class="dot paper-dot"></span><span>논문</span></div>
-    <div class="legend-item"><span class="dot researcher-dot"></span><span>연구자</span></div>
+    <div class="legend-title">Node types</div>
+    <div class="legend-item"><span class="dot topic-dot"></span><span>Policy area</span></div>
+    <div class="legend-item"><span class="dot subtopic-dot"></span><span>Subtopic</span></div>
+    <div class="legend-item"><span class="dot paper-dot"></span><span>Paper</span></div>
+    <div class="legend-item"><span class="dot researcher-dot"></span><span>Researcher</span></div>
   </div>
 
+  <!-- Tooltip -->
   <div id="tooltip" class="hidden"></div>
 
   <script src="https://d3js.org/d3.v7.min.js"></script>

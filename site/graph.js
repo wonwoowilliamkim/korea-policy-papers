@@ -1,4 +1,4 @@
-// ── Korea Policy Papers — Research Map ───────────────────────────────────
+// ── Korea Policy Evaluation — Research Map ───────────────────────────────
 // D3.js v7 force-directed graph
 
 const TYPE_CONFIG = {
@@ -197,14 +197,14 @@ function render(data) {
 
 // ── Color helper ──────────────────────────────────────────────────────────
 function nodeColor(d) {
-  if (d.color) return d.color;               // topics use their own color
+  if (d.color) return d.color;
   return NODE_COLOR[d.type] || "#888";
 }
 
 // ── Tooltip ───────────────────────────────────────────────────────────────
 function showTooltip(event, d) {
   const sub = d.type === "paper"
-    ? `${(d.authors || []).slice(0,2).join(", ")}${(d.authors||[]).length > 2 ? " et al." : ""} · ${d.journal || ""} ${d.year || ""}`
+    ? `${(d.authors || []).slice(0,2).join(", ")}${(d.authors||[]).length > 2 ? " et al." : ""} · ${d.journal || ""} ${d.year || ""}${d.tag ? " " + d.tag : ""}`
     : d.type === "researcher"
     ? d.affiliation || ""
     : (d.description || "").slice(0, 90) + (d.description?.length > 90 ? "…" : "");
@@ -279,29 +279,43 @@ function showPanel(d, connectedIds, nodes, links) {
   if (d.journal) meta.innerHTML += `<span class="meta-chip journal">${d.journal}</span>`;
   if (d.affiliation) meta.innerHTML += `<span class="meta-chip">${d.affiliation}</span>`;
   if (d.tag)     meta.innerHTML += `<span class="meta-chip tag">${d.tag}</span>`;
+  if (d.authors?.length) {
+    const authStr = d.authors.slice(0, 3).join(", ") + (d.authors.length > 3 ? " et al." : "");
+    meta.innerHTML += `<br><span style="font-size:0.72rem;color:var(--muted);margin-top:2px">${authStr}</span>`;
+  }
   if (d.key_concepts?.length) {
     meta.innerHTML += `<br><span style="font-size:0.72rem;color:var(--muted)">${d.key_concepts.slice(0,4).join(" · ")}</span>`;
   }
 
-  // Handbook section
+  // Section line
   const secEl = document.getElementById("panel-section");
-  secEl.textContent = d.section ? `Handbook: ${d.section}` : d.handbook_section ? `Handbook: ${d.handbook_section}` : "";
+  secEl.textContent = d.section ? `§ ${d.section}` : "";
 
-  document.getElementById("panel-summary").textContent =
-    d.summary || d.description || "";
+  // Abstract block
+  const abstractWrap = document.getElementById("panel-abstract-wrap");
+  const summaryEl    = document.getElementById("panel-summary");
+  const abstractLink = document.getElementById("panel-abstract-link");
 
-  // Action buttons
+  const hasSummary = !!(d.summary || d.description);
+  if (hasSummary) {
+    abstractWrap.classList.remove("hidden");
+    summaryEl.textContent = d.summary || d.description || "";
+  } else {
+    abstractWrap.classList.add("hidden");
+    summaryEl.textContent = "";
+  }
+
+  // "↗ Full paper" link inside abstract block
+  if (d.url) {
+    abstractLink.href = d.url;
+    abstractLink.classList.remove("hidden");
+  } else {
+    abstractLink.classList.add("hidden");
+  }
+
+  // Extra action buttons (website for researchers, or duplicate paper link)
   const actions = document.getElementById("panel-actions");
   actions.innerHTML = "";
-  if (d.url) {
-    const a = document.createElement("a");
-    a.className = "action-btn";
-    a.href = d.url;
-    a.target = "_blank";
-    a.rel = "noopener";
-    a.innerHTML = "↗ View paper";
-    actions.appendChild(a);
-  }
   if (d.website) {
     const a = document.createElement("a");
     a.className = "action-btn";
