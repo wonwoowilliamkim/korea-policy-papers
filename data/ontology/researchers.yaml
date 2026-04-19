@@ -1,0 +1,234 @@
+# Korea Policy Evaluation — Researchers
+# 한국 정책평가 연구자 데이터베이스
+#
+# 분류:
+#   🇰🇷 = 한국 경제학자 / 한국 정책 전문 연구자
+#   🌐 = 한국 관련 연구 다수 / 비교 가능한 정책 연구자
+#   📐 = 핵심 방법론 개발자
+
+researchers:
+
+  # ── 인과추론 방법론 개발자 ────────────────────────────────────────────────
+
+  - id: angrist_joshua
+    name: Joshua Angrist
+    affiliation: MIT (Nobel 2021)
+    tag: "📐"
+    topics: [did_methods, iv_methods, rdd_methods, class_size_effects, minimum_wage]
+    key_papers: [angrist_lavy_1999, card_1995]
+
+  - id: card_david
+    name: David Card
+    affiliation: UC Berkeley (Nobel 2021)
+    tag: "📐"
+    topics: [minimum_wage, did_methods, iv_methods, labor_policy]
+    key_papers: [card_krueger_1994]
+
+  - id: chetty_raj
+    name: Raj Chetty
+    affiliation: Harvard University
+    tag: "📐 🌐"
+    topics: [structural_methods, causal_methods, unemployment_insurance, regional_policy]
+    website: https://rajchetty.com
+    key_papers: [chetty_2008_ui, chetty_2009_sufficient_stats, chetty_hendren_etal_2014, chetty_friedman_rockoff_2014_i]
+
+  - id: callaway_brantly
+    name: Brantly Callaway
+    affiliation: University of Georgia
+    tag: "📐"
+    topics: [did_methods, causal_methods]
+    key_papers: [callaway_santanna_2021]
+
+  - id: santanna_pedro
+    name: Pedro H.C. Sant'Anna
+    affiliation: Vanderbilt University / Microsoft Research
+    tag: "📐"
+    topics: [did_methods, causal_methods]
+    key_papers: [callaway_santanna_2021]
+
+  - id: calonico_sebastian
+    name: Sebastian Calonico
+    affiliation: Columbia University
+    tag: "📐"
+    topics: [rdd_methods, causal_methods]
+    key_papers: [calonico_cattaneo_titiunik_2014]
+
+  - id: cattaneo_matias
+    name: Matias D. Cattaneo
+    affiliation: Princeton University
+    tag: "📐"
+    topics: [rdd_methods, causal_methods]
+    key_papers: [calonico_cattaneo_titiunik_2014]
+
+  - id: imbens_guido
+    name: Guido Imbens
+    affiliation: Stanford GSB (Nobel 2021)
+    tag: "📐"
+    topics: [rdd_methods, iv_methods, causal_methods]
+    key_papers: [imbens_lemieux_2008]
+
+  - id: heckman_james
+    name: James Heckman
+    affiliation: University of Chicago (Nobel 2000)
+    tag: "📐"
+    topics: [causal_methods, iv_methods, education_policy]
+    key_papers: [heckman_ichimura_todd_1997]
+
+  # ── 저출생·인구 정책 ──────────────────────────────────────────────────────
+
+  - id: milligan_kevin
+    name: Kevin Milligan
+    affiliation: UBC
+    tag: "🌐"
+    topics: [cash_transfers_fertility, fertility_policy]
+    key_papers: [milligan_2005]
+
+  - id: cohen_alma
+    name: Alma Cohen
+    affiliation: Harvard Law School
+    tag: "🌐"
+    topics: [cash_transfers_fertility, fertility_policy]
+    key_papers: [cohen_dehejia_romanov_2013]
+
+  - id: dahl_gordon
+    name: Gordon Dahl
+    affiliation: UC San Diego
+    tag: "🌐"
+    topics: [fertility_policy, labor_policy]
+    key_papers: [dahl_moretti_2008]
+
+  - id: becker_gary
+    name: Gary Becker
+    affiliation: University of Chicago (Nobel 1992, 1930–2014)
+    tag: "📐"
+    topics: [quantity_quality_tradeoff, fertility_policy]
+    key_papers: [becker_lewis_1973]
+
+  # ── 교육 정책 ─────────────────────────────────────────────────────────────
+
+  - id: krueger_alan
+    name: Alan Krueger
+    affiliation: Princeton (1960–2019)
+    tag: "📐"
+    topics: [class_size_effects, minimum_wage, education_policy]
+    key_papers: [card_krueger_1994, krueger_1999]
+
+  - id: lavy_victor
+    name: Victor Lavy
+    affiliation: Hebrew University / Warwick
+    tag: "🌐"
+    topics: [class_size_effects, teacher_quality, education_policy]
+    key_papers: [angrist_lavy_1999]
+
+  - id: friedman_john_n
+    name: John N. Friedman
+    affiliation: Brown University
+    tag: "📐"
+    topics: [teacher_quality, education_policy]
+    key_papers: [chetty_friedman_rockoff_2014_i]
+
+  - id: rockoff_jonah
+    name: Jonah Rockoff
+    affiliation: Columbia Business School
+    tag: "📐"
+    topics: [teacher_quality, education_policy]
+    key_papers: [chetty_friedman_rockoff_2014_i]
+
+  - id: hoxby_caroline
+    name: Caroline Hoxby
+    affiliation: Stanford University
+    tag: "📐"
+    topics: [class_size_effects, education_policy, higher_education]
+    key_papers: [hoxby_2000]
+
+  # ── 부동산·주거 정책 ──────────────────────────────────────────────────────
+
+  - id: diamond_rebecca
+    name: Rebecca Diamond
+    affiliation: Stanford GSB
+    tag: "🌐"
+    topics: [rent_control_effects, housing_policy]
+    key_papers: [diamond_mcquade_qian_2019]
+
+  - id: autor_david
+    name: David Autor
+    affiliation: MIT
+    tag: "📐 🌐"
+    topics: [employment_protection, labor_policy, rent_control_effects]
+    key_papers: [autor_kerr_kugler_2007, autor_palmer_pathak_2014]
+
+  - id: moretti_enrico
+    name: Enrico Moretti
+    affiliation: UC Berkeley
+    tag: "📐 🌐"
+    topics: [place_based_policy, regional_policy]
+    key_papers: [kline_moretti_2014, moretti_2011]
+
+  - id: kline_patrick
+    name: Patrick Kline
+    affiliation: UC Berkeley
+    tag: "🌐"
+    topics: [place_based_policy, regional_policy]
+    key_papers: [kline_moretti_2014]
+
+  # ── 노동시장 정책 ─────────────────────────────────────────────────────────
+
+  - id: acemoglu_daron
+    name: Daron Acemoglu
+    affiliation: MIT (Nobel 2024)
+    tag: "🌐"
+    topics: [employment_protection, labor_policy]
+    key_papers: [acemoglu_angrist_2001]
+
+  - id: kerr_william
+    name: William R. Kerr
+    affiliation: Harvard Business School
+    tag: "🌐"
+    topics: [employment_protection, labor_policy]
+    key_papers: [autor_kerr_kugler_2007]
+
+  - id: kugler_adriana
+    name: Adriana Kugler
+    affiliation: Georgetown University
+    tag: "🌐"
+    topics: [employment_protection, labor_policy]
+    key_papers: [autor_kerr_kugler_2007]
+
+  # ── 사회보험·복지 ─────────────────────────────────────────────────────────
+
+  - id: gruber_jonathan
+    name: Jonathan Gruber
+    affiliation: MIT
+    tag: "🌐"
+    topics: [health_insurance, unemployment_insurance, social_insurance]
+    key_papers: [currie_gruber_1996, gruber_1997]
+
+  - id: currie_janet
+    name: Janet Currie
+    affiliation: Princeton University
+    tag: "🌐"
+    topics: [health_insurance, social_insurance]
+    key_papers: [currie_gruber_1996]
+
+  - id: moffitt_robert
+    name: Robert Moffitt
+    affiliation: Johns Hopkins University
+    tag: "📐"
+    topics: [pension_welfare, social_insurance]
+    key_papers: [moffitt_1992]
+
+  - id: hendren_nathaniel
+    name: Nathaniel Hendren
+    affiliation: Harvard University
+    tag: "📐"
+    topics: [structural_methods, regional_policy]
+    key_papers: [chetty_hendren_etal_2014]
+
+  # ── 지역·지방 정책 ────────────────────────────────────────────────────────
+
+  - id: saez_emmanuel
+    name: Emmanuel Saez
+    affiliation: UC Berkeley
+    tag: "🌐"
+    topics: [regional_policy, pension_welfare]
+    key_papers: [chetty_hendren_etal_2014]

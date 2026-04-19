@@ -1,0 +1,261 @@
+# Korea Policy Evaluation — Topic Ontology
+# 한국 정책평가 연구 온톨로지
+# 타겟: 한국 정책에 직접 적용 가능한 Top 저널 논문들
+
+topics:
+
+  # ── 저출생 대응 정책 ────────────────────────────────────────────────────
+  - id: fertility_policy
+    label: 저출생 대응 정책
+    label_en: Fertility & Pro-Natal Policy
+    color: "#E05252"
+    description: >
+      출생률 제고를 위한 정부 정책의 인과적 효과. 아동수당, 출산장려금,
+      보육비 지원, 육아휴직 등이 실제로 출생률·출생아수에 미치는 영향.
+      한국의 합계출산율 0.72 (2023)는 OECD 최저 수준.
+    subtopics:
+      - id: cash_transfers_fertility
+        label: 출산장려금·아동수당 효과
+        key_concepts:
+          - 직접 현금 이전의 출산 결정 효과
+          - 캐나다 퀘벡 Baby Bonus (Milligan 2005)
+          - 이스라엘 자녀수당 개혁 (Cohen et al. 2013)
+          - 한국 아동수당 (2018년 도입) 효과 분석
+
+      - id: childcare_policy
+        label: 보육·육아 정책 효과
+        key_concepts:
+          - 보육시설 확충과 여성 노동공급
+          - 육아휴직 급여 수준과 출생률
+          - 공보육 확대 효과
+          - 아버지 육아휴직 (Paternity leave)
+
+      - id: quantity_quality_tradeoff
+        label: 자녀 수-질 상충관계
+        key_concepts:
+          - Becker & Lewis (1973) Q-Q tradeoff
+          - 사교육비 부담과 저출생
+          - 교육비 용돈과 출산 결정
+          - 한국의 자녀 양육 비용
+
+  # ── 교육 정책 ────────────────────────────────────────────────────────────
+  - id: education_policy
+    label: 교육 정책
+    label_en: Education Policy
+    color: "#5B8DEE"
+    description: >
+      교육 관련 정책의 인과적 효과. 학급 규모, 교사 질, 사교육 규제,
+      대학 입시 제도, 고교 평준화 등 한국 교육 정책 평가에 핵심적인 연구들.
+    subtopics:
+      - id: class_size_effects
+        label: 학급 규모 효과
+        key_concepts:
+          - Maimonides Rule (Angrist & Lavy 1999)
+          - 회귀불연속설계(RDD) 응용
+          - STAR 실험 (Tennessee)
+          - 한국 학급당 학생수 정책
+
+      - id: teacher_quality
+        label: 교사 질 및 교육 투입 효과
+        key_concepts:
+          - 교사 부가가치(Value Added) 추정
+          - 교사 배치 정책
+          - Chetty-Friedman-Rockoff 프레임워크
+          - 한국 교원 평가제
+
+      - id: private_tutoring
+        label: 사교육·학원 규제
+        key_concepts:
+          - 학원 운영시간 규제 (밤 10시)
+          - EBS 수능 연계 정책
+          - 사교육비 규제의 효과와 한계
+          - 과외 금지 정책 (1980년) 자연실험
+
+      - id: higher_education
+        label: 대학 입시·고등교육 정책
+        key_concepts:
+          - 대학 진학률과 노동시장 성과
+          - 수능(CSAT) 제도 변화
+          - 지방대 활성화 정책
+          - 학자금 대출 제도
+
+  # ── 부동산·주거 정책 ──────────────────────────────────────────────────────
+  - id: housing_policy
+    label: 부동산·주거 정책
+    label_en: Housing & Real Estate Policy
+    color: "#48BB78"
+    description: >
+      임대차 규제, 종합부동산세, 분양가 상한제 등 한국 부동산 정책의 효과.
+      세계에서 유일한 전세(Jeonse) 제도를 포함한 한국 주거 시장의 특수성.
+    subtopics:
+      - id: rent_control_effects
+        label: 임대차 규제 효과
+        key_concepts:
+          - 임대차 3법 (2020): 계약갱신청구권·전월세상한제
+          - 임대료 규제의 공급 감소 효과
+          - Diamond et al. (2019) 샌프란시스코 임대료 규제
+          - 전세→월세 전환 가속화
+
+      - id: jeonse_system
+        label: 전세 제도 분석
+        key_concepts:
+          - 전세(Jeonse): 한국 고유 전세보증금 임대 시스템
+          - 전세가율과 갭투자
+          - 전세 사기와 제도 개혁
+          - 금리 변화와 전세→월세 전환
+
+      - id: property_tax
+        label: 부동산 세제 효과
+        key_concepts:
+          - 종합부동산세(종부세) 강화 효과
+          - 양도소득세와 거래 동결(lock-in effect)
+          - 취득세 감면의 효과
+          - 보유세 강화와 수요 억제
+
+  # ── 노동시장 정책 ─────────────────────────────────────────────────────────
+  - id: labor_policy
+    label: 노동시장 정책
+    label_en: Labor Market Policy
+    color: "#F6AD55"
+    description: >
+      최저임금, 고용보호법, 비정규직 규제, 근로시간 단축 등
+      한국 노동시장 정책의 효과. 1997년 외환위기 전후 노동시장 구조 변화.
+    subtopics:
+      - id: minimum_wage
+        label: 최저임금 효과
+        key_concepts:
+          - Card & Krueger (1994) NJ-PA 자연실험
+          - 최저임금 인상과 고용 탄력성
+          - 한국 최저임금 급속 인상 (2017-2018)
+          - 소상공인·자영업 영향
+
+      - id: employment_protection
+        label: 고용보호법·비정규직 규제
+        key_concepts:
+          - 해고 비용과 고용 수준
+          - Autor-Kerr-Kugler (2007) 프레임워크
+          - 한국 비정규직법 (2007) 효과
+          - 정규직-비정규직 이중구조
+
+      - id: working_hours
+        label: 근로시간·일·가정 양립
+        key_concepts:
+          - 주52시간 근무제 (2018) 효과
+          - 근로시간 단축과 생산성
+          - 유연근무제 확산
+          - 일·가정 양립 정책
+
+      - id: financial_crisis_labor
+        label: 외환위기·경기침체와 노동시장
+        key_concepts:
+          - 1997년 IMF 외환위기 노동시장 충격
+          - 대규모 구조조정과 비정규직 확산
+          - 경기침체와 청년 고용 흉터 효과(scarring)
+          - 코로나19 충격과 고용 회복
+
+  # ── 사회보험·복지 정책 ────────────────────────────────────────────────────
+  - id: social_insurance
+    label: 사회보험·복지 정책
+    label_en: Social Insurance & Welfare
+    color: "#9F7AEA"
+    description: >
+      국민건강보험, 고용보험, 국민연금, 기초생활보장 등 한국 사회보험·복지
+      정책의 효과. 수급 기준 변화, 급여 수준, 도덕적 해이 등 핵심 쟁점.
+    subtopics:
+      - id: health_insurance
+        label: 건강보험 효과
+        key_concepts:
+          - 건강보험 급여 확대와 의료 이용
+          - 비급여 항목과 과잉진료
+          - Currie & Gruber (1996) 메디케이드 확대 프레임워크
+          - 국민건강보험 보장성 강화 (문재인 케어)
+
+      - id: unemployment_insurance
+        label: 고용보험·실업급여 효과
+        key_concepts:
+          - 실업급여 기간·수준과 구직 기간
+          - 도덕적 해이 vs. 소비 평활화 (Chetty 2008)
+          - 한국 고용보험 사각지대
+          - 특수고용직·플랫폼 노동자 적용
+
+      - id: pension_welfare
+        label: 국민연금·기초연금·기초생활보장
+        key_concepts:
+          - 기초생활보장 수급 기준과 노동 공급
+          - 국민연금 의무가입과 노후소득 보장
+          - 기초연금(65세 이상) 효과
+          - 복지 수급과 근로 유인 저해(welfare trap)
+
+  # ── 지역·지방 정책 ────────────────────────────────────────────────────────
+  - id: regional_policy
+    label: 지역·지방 정책
+    label_en: Regional & Local Policy
+    color: "#76E4F7"
+    description: >
+      수도권 집중 완화, 지방 이전 인센티브, 지방소멸 대응 등
+      한국 지역균형발전 정책의 효과. 세종시, 혁신도시 등 구체적 사례.
+    subtopics:
+      - id: capital_decentralization
+        label: 수도권 규제·분산 정책
+        key_concepts:
+          - 세종시 행정수도 이전 효과
+          - 공공기관 혁신도시 이전 (LH, 한전 등)
+          - 수도권 집중과 지방 소멸
+          - Kline & Moretti (2014) TVA 지역개발 프레임워크
+
+      - id: place_based_policy
+        label: 지역 기반 산업정책
+        key_concepts:
+          - 산업단지·특구 설치 효과
+          - 기업 이전 인센티브 (세제 혜택)
+          - 지역 혁신 클러스터 정책
+          - 국가 균형발전 특별법
+
+      - id: rural_decline
+        label: 지방소멸 대응
+        key_concepts:
+          - 인구감소지역 89곳 (행안부 2021)
+          - 지방소멸대응기금
+          - 농촌 인구 유입 인센티브
+          - 로컬크리에이터·귀농귀촌 지원
+
+  # ── 인과추론 방법론 ──────────────────────────────────────────────────────
+  - id: causal_methods
+    label: 인과추론 방법론
+    label_en: Causal Inference Methods
+    color: "#68D391"
+    description: >
+      한국 정책 평가에 적용되는 핵심 계량경제학 방법론.
+      DiD, RDD, IV, Matching 등의 이론적·실증적 기반이 되는 핵심 논문들.
+    subtopics:
+      - id: did_methods
+        label: 이중차분법 (DiD)
+        key_concepts:
+          - Parallel trends 가정과 검증
+          - Staggered DiD (Callaway & Sant'Anna 2021)
+          - Event study design
+          - 패널 고정효과 모형
+
+      - id: rdd_methods
+        label: 회귀불연속설계 (RDD)
+        key_concepts:
+          - Sharp vs. Fuzzy RDD
+          - Bandwidth 선택 (Calonico et al. 2014)
+          - Local linear regression
+          - 적분 기준선 자연실험 설계
+
+      - id: iv_methods
+        label: 도구변수법 (IV)
+        key_concepts:
+          - LATE (Local Average Treatment Effect)
+          - Weak instruments 문제
+          - Bartik instrument
+          - 자연실험으로서의 정책 변화
+
+      - id: structural_methods
+        label: 구조모형 추정
+        key_concepts:
+          - 부분균형 vs. 일반균형 효과
+          - 유발 비용 분석 (Hendren 2016)
+          - 충분통계량 접근법 (Chetty 2009)
+          - 행태적 쐐기(behavioral wedge) 추정

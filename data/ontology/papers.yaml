@@ -1,0 +1,430 @@
+# Korea Policy Evaluation — Paper Database
+# 한국 정책평가 연구 논문 데이터베이스
+#
+# 수록 기준:
+#   🇰🇷 = 한국 데이터/정책 직접 분석
+#   🌐 = 한국과 직접 비교 가능한 유사 정책 평가 (방법론 템플릿)
+#   📐 = 한국 정책 평가에 핵심적인 방법론 논문
+#
+# 저널: AER, QJE, JPE, REStud, Econometrica, AEJ, JPubE, JEEA, REStat
+
+papers:
+
+  # ── 저출생 대응 정책 ────────────────────────────────────────────────────
+
+  - id: milligan_2005
+    title: "Subsidizing the Stork: New Evidence on Tax Incentives and Fertility"
+    authors: [Milligan]
+    year: 2005
+    journal: JPE
+    topics: [cash_transfers_fertility, fertility_policy]
+    tag: "🌐"
+    url: https://doi.org/10.1086/426014
+    summary: >
+      캐나다 퀘벡주의 출산 장려금(Allowance for Newborn Children, 1988년 도입)이
+      출생률에 미친 인과적 효과를 DiD로 추정. 장려금이 클수록 출생 확률이
+      유의미하게 증가. 3자녀에 대한 보조금(최대 C$8,000)이 가장 강한 효과.
+      한국 출산장려금 정책 분석의 핵심 방법론 템플릿.
+
+  - id: cohen_dehejia_romanov_2013
+    title: "Financial Incentives and Fertility"
+    authors: [Cohen, Dehejia, Romanov]
+    year: 2013
+    journal: REStud
+    topics: [cash_transfers_fertility, fertility_policy]
+    tag: "🌐"
+    url: https://doi.org/10.1093/restud/rds03
+    summary: >
+      이스라엘 아동수당 시스템의 여러 차례 개혁을 자연실험으로 활용.
+      수당 증가 시 출생률 상승, 삭감 시 하락. 추가 자녀에 대한 탄력성 약 0.04.
+      수당 수준이 높을수록 특히 다산(多産) 가정에서 출생 반응이 큼.
+      한국 아동수당·출산장려금 효과 분석의 직접 비교 사례.
+
+  - id: dahl_moretti_2008
+    title: "The Demand for Sons"
+    authors: [Dahl, Moretti]
+    year: 2008
+    journal: QJE
+    topics: [fertility_policy, quantity_quality_tradeoff]
+    tag: "🌐"
+    url: https://doi.org/10.1162/qjec.2008.123.3.1085
+    summary: >
+      아들 선호가 출생률과 가족 구조에 미치는 영향을 분석. 아들이 없는 가정에서
+      추가 출산 확률이 높음. 한국의 역사적 남아선호와 성별 선택적 낙태를
+      이해하는 데 직접 적용 가능한 연구. 성비 불균형과 출산율 변화의 연결고리.
+
+  - id: becker_lewis_1973
+    title: "On the Interaction between the Quantity and Quality of Children"
+    authors: [Becker, Lewis]
+    year: 1973
+    journal: JPE
+    topics: [quantity_quality_tradeoff, fertility_policy]
+    tag: "📐"
+    url: https://doi.org/10.1086/260166
+    summary: >
+      자녀 수(Quantity)와 자녀 질(Quality) 간의 근본적 상충관계를 이론화.
+      소득이 증가하면 자녀 수는 줄고 자녀 1인당 투자는 늘어난다는 예측.
+      한국의 극심한 저출생-높은 사교육비 패턴을 설명하는 핵심 이론 프레임.
+
+  - id: aaronson_etal_2021
+    title: "The Effect of Fertility on Mothers' Labor Supply over the Last Two Centuries"
+    authors: [Aaronson, Dehejia, Jordan, Lee, Phelan, Stoye]
+    year: 2021
+    journal: AER
+    topics: [fertility_policy, childcare_policy]
+    tag: "🌐"
+    url: https://doi.org/10.1257/aer.20180263
+    summary: >
+      200년에 걸친 데이터를 활용해 자녀 수가 여성 노동공급에 미치는 인과적
+      효과를 추정. 쌍둥이와 성별 구성을 도구변수로 활용. 출산율 감소가
+      여성 노동참여 증가에 기여. 한국의 여성 경력단절과 출생률 분석에 직접 관련.
+
+  # ── 교육 정책 ─────────────────────────────────────────────────────────────
+
+  - id: angrist_lavy_1999
+    title: "Using Maimonides' Rule to Estimate the Effect of Class Size on Scholastic Achievement"
+    authors: [Angrist, Lavy]
+    year: 1999
+    journal: QJE
+    topics: [class_size_effects, education_policy, rdd_methods]
+    tag: "📐"
+    url: https://doi.org/10.1162/003355399556061
+    summary: >
+      이스라엘 학급 규모 제한 규정(Maimonides Rule: 40명 이상이면 학급 분리)을
+      회귀불연속설계(RDD)로 활용. 학급 규모 축소가 학업 성취도를 유의미하게
+      개선. 한국 학급당 학생수 정책 평가의 핵심 방법론 논문.
+      20~25명 학급 기준이 효과적임을 실증.
+
+  - id: chetty_friedman_rockoff_2014_i
+    title: "Measuring the Impacts of Teachers I: Evaluating Bias in Teacher Value-Added Estimates"
+    authors: [Chetty, Friedman, Rockoff]
+    year: 2014
+    journal: AER
+    topics: [teacher_quality, education_policy]
+    tag: "📐"
+    url: https://doi.org/10.1257/aer.104.9.2593
+    summary: >
+      교사 부가가치(Value-Added) 추정의 편의를 평가. 교사 배치의 준무작위성을
+      활용해 VA 추정이 편의 없음을 확인. 양질의 교사는 학생의 장기적 노동
+      시장 성과(소득, 대학 진학)에 유의미한 영향. 한국 교원 평가제 설계의 근거.
+
+  - id: krueger_1999
+    title: "Experimental Estimates of Education Production Functions"
+    authors: [Krueger]
+    year: 1999
+    journal: QJE
+    topics: [class_size_effects, education_policy]
+    tag: "📐"
+    url: https://doi.org/10.1162/003355399556052
+    summary: >
+      테네시 STAR 실험을 재분석. 소규모 학급(13-17명) 배정이 학업 성취도와
+      장기 성과에 긍정적 효과. 특히 저소득층·소수집단 학생에게 효과가 큼.
+      무작위 실험 기반으로 학급 규모 효과를 가장 엄밀하게 추정한 연구.
+
+  - id: hoxby_2000
+    title: "The Effects of Class Size on Student Achievement: New Evidence from Population Variation"
+    authors: [Hoxby]
+    year: 2000
+    journal: QJE
+    topics: [class_size_effects, education_policy]
+    tag: "📐"
+    url: https://doi.org/10.1162/00335530051136796
+    summary: >
+      학급 규모의 출생 코호트 크기 변이를 도구변수로 활용. Krueger와 달리
+      학급 규모 효과가 미미하다는 결론. STAR 실험의 이월 효과(spill-over) 등
+      잠재적 편의를 지적. 교육 투입 효과 논쟁의 핵심 대립 논문.
+
+  # ── 부동산·주거 정책 ──────────────────────────────────────────────────────
+
+  - id: diamond_mcquade_qian_2019
+    title: "The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality: Evidence from San Francisco"
+    authors: [Diamond, McQuade, Qian]
+    year: 2019
+    journal: AER
+    topics: [rent_control_effects, housing_policy]
+    tag: "🌐"
+    url: https://doi.org/10.1257/aer.20181289
+    summary: >
+      샌프란시스코 1994년 임대료 규제 확대를 자연실험으로 활용. 임대료 규제는
+      기존 세입자를 보호하지만 집주인이 임대 공급을 15% 줄이는 부작용 발생.
+      전체적으로 임대료 상승과 공급 감소를 초래. 한국 임대차 3법 효과 분석의
+      직접 비교 템플릿.
+
+  - id: autor_palmer_pathak_2014
+    title: "Housing Market Spillovers: Evidence from the End of Rent Control in Cambridge, Massachusetts"
+    authors: [Autor, Palmer, Pathak]
+    year: 2014
+    journal: JPE
+    topics: [rent_control_effects, housing_policy]
+    tag: "🌐"
+    url: https://doi.org/10.1086/675536
+    summary: >
+      1995년 캠브리지 임대료 규제 폐지의 주택 가격 파급 효과 분석. 규제 해제 후
+      해당 건물 가격이 45% 상승, 인근 비규제 건물도 가격 상승. 임대료 규제가
+      자본 유지에 미치는 부정적 영향을 실증.
+
+  - id: sims_2007
+    title: "The Long-Run Effects of Removing Rent Control"
+    authors: [Sims]
+    year: 2007
+    journal: JPubE
+    topics: [rent_control_effects, housing_policy]
+    tag: "🌐"
+    url: https://doi.org/10.1016/j.jpubeco.2006.09.004
+    summary: >
+      매사추세츠 1995년 임대료 규제 폐지의 장기 효과. 규제 해제 후 임대 공급
+      증가와 입주율(vacancy rate) 상승 확인. 규제가 임대 주택의 유지관리
+      투자를 억제하고 공급을 줄임을 실증. 임대료 규제 폐지의 후생 효과 분석.
+
+  # ── 노동시장 정책 ─────────────────────────────────────────────────────────
+
+  - id: card_krueger_1994
+    title: "Minimum Wages and Employment: A Case Study of the Fast Food Industry in New Jersey and Pennsylvania"
+    authors: [Card, Krueger]
+    year: 1994
+    journal: AER
+    topics: [minimum_wage, labor_policy, did_methods]
+    tag: "📐"
+    url: https://www.jstor.org/stable/2117813
+    summary: >
+      뉴저지-펜실베이니아 최저임금 자연실험. 최저임금 인상 후 패스트푸드 고용
+      감소가 없음. 고용 탄력성에 대한 전통적 견해를 도전. DiD의 고전적 응용.
+      한국 2018년 최저임금 급인상(16.4%) 효과 분석의 핵심 방법론 논문.
+
+  - id: autor_kerr_kugler_2007
+    title: "Does Employment Protection Reduce Productivity? Evidence from US States"
+    authors: [Autor, Kerr, Kugler]
+    year: 2007
+    journal: QJE
+    topics: [employment_protection, labor_policy]
+    tag: "🌐"
+    url: https://doi.org/10.1162/qjec.122.1.189
+    summary: >
+      미국 주별 고용보호법 도입을 자연실험으로 활용. 고용보호법은 일시적 고용을
+      줄이고 전체 고용·생산성에 부정적 영향. 한국 비정규직법(2007) 및
+      해고요건 강화 정책의 효과 분석에 직접 적용 가능한 프레임워크.
+
+  - id: acemoglu_angrist_2001
+    title: "Consequences of Employment Protection? The Case of the Americans with Disabilities Act"
+    authors: [Acemoglu, Angrist]
+    year: 2001
+    journal: JPE
+    topics: [employment_protection, labor_policy]
+    tag: "🌐"
+    url: https://doi.org/10.1086/322836
+    summary: >
+      장애인 고용보호법(ADA) 도입이 장애인 고용에 오히려 부정적 영향을 미쳤음을
+      실증. 고용보호 강화가 의도치 않게 보호 대상 집단의 고용을 줄이는
+      역설적 결과. 한국 비정규직 보호법의 정규직 전환 의무 효과 분석에 직접 관련.
+
+  - id: neumark_wascher_2008
+    title: "Minimum Wages and Employment"
+    authors: [Neumark, Wascher]
+    year: 2008
+    journal: "Foundations and Trends in Microeconomics"
+    topics: [minimum_wage, labor_policy]
+    tag: "📐"
+    summary: >
+      최저임금 효과에 관한 광범위한 문헌 검토. 고용 감소 효과를 지지하는 증거와
+      반론을 종합. 최저임금의 분배 효과 및 저임금 근로자에 대한 순 영향 분석.
+      한국 최저임금 정책 효과 논쟁의 배경 문헌.
+
+  # ── 사회보험·복지 정책 ─────────────────────────────────────────────────────
+
+  - id: currie_gruber_1996
+    title: "Health Insurance Eligibility, Utilization of Medical Care, and Child Health"
+    authors: [Currie, Gruber]
+    year: 1996
+    journal: QJE
+    topics: [health_insurance, social_insurance]
+    tag: "🌐"
+    url: https://doi.org/10.2307/2946684
+    summary: >
+      메디케이드 적용 확대(1984-1992)의 아동 건강에 미치는 효과. 적용 확대가
+      의료 이용을 증가시키고 영아 사망률을 감소. 한국 건강보험 보장성 강화
+      (문재인 케어) 효과 분석의 핵심 방법론 및 비교 템플릿.
+
+  - id: gruber_1997
+    title: "The Consumption Smoothing Benefits of Unemployment Insurance"
+    authors: [Gruber]
+    year: 1997
+    journal: AER
+    topics: [unemployment_insurance, social_insurance]
+    tag: "🌐"
+    url: https://www.jstor.org/stable/2951461
+    summary: >
+      실업보험이 실직 시 소비 평활화에 미치는 효과. 실업보험이 없을 경우
+      실직 가구 소비가 22% 감소할 것으로 추정. 최적 실업보험 급여 수준 분석.
+      한국 고용보험 급여 수준 및 기간 설계의 근거 논문.
+
+  - id: chetty_2008_ui
+    title: "Moral Hazard versus Liquidity and Optimal Unemployment Insurance"
+    authors: [Chetty]
+    year: 2008
+    journal: JPE
+    topics: [unemployment_insurance, social_insurance, structural_methods]
+    tag: "📐"
+    url: https://doi.org/10.1086/588585
+    summary: >
+      실업보험에서 도덕적 해이(moral hazard)와 유동성 제약을 분리. 실업급여
+      수혜 기간 연장이 구직 기간을 늘리는 효과의 대부분이 도덕적 해이가 아닌
+      유동성 제약 완화. 최적 실업보험이 더 관대해야 함을 시사. 한국 고용보험
+      설계에 직접 적용 가능한 충분통계량 접근법.
+
+  - id: moffitt_1992
+    title: "Incentive Effects of the U.S. Welfare System: A Review"
+    authors: [Moffitt]
+    year: 1992
+    journal: JEL
+    topics: [pension_welfare, social_insurance]
+    tag: "📐"
+    summary: >
+      미국 복지 시스템(AFDC)의 노동 공급 유인 효과 종합 리뷰. 복지 급여가
+      수혜 자격자의 노동 공급을 감소시키는 효과 추정. 한국 기초생활보장제도의
+      수급 기준선 변화가 노동 공급에 미치는 효과 분석의 배경 문헌.
+
+  - id: kleven_kopczuk_2011
+    title: "Transfer Program Complexity and the Take-Up of Social Benefits"
+    authors: [Kleven, Kopczuk]
+    year: 2011
+    journal: "AEJ: Economic Policy"
+    topics: [pension_welfare, social_insurance]
+    tag: "🌐"
+    url: https://doi.org/10.1257/pol.3.1.54
+    summary: >
+      복잡한 복지 신청 절차가 수급률을 낮추는 효과를 모형화. 복잡성은 선별
+      기능을 하지만 정당한 수급자의 접근을 차단. 한국 기초생활보장 및 각종
+      복지 수당의 신청 편의화 정책 근거. 사각지대 해소 정책 설계에 직접 관련.
+
+  # ── 지역·지방 정책 ─────────────────────────────────────────────────────────
+
+  - id: kline_moretti_2014
+    title: "Local Economic Development, Agglomeration Economies, and the Big Push: 100 Years of Evidence from the Tennessee Valley Authority"
+    authors: [Kline, Moretti]
+    year: 2014
+    journal: QJE
+    topics: [place_based_policy, regional_policy]
+    tag: "🌐"
+    url: https://doi.org/10.1093/qje/qjt034
+    summary: >
+      미국 테네시 강 유역 개발 공사(TVA, 1930s)의 100년에 걸친 지역경제 효과.
+      제조업 고용·소득 장기적 증가, 농업 부문은 효과 없음. 대규모 지역 개발
+      정책의 집적경제 효과 실증. 한국 혁신도시·세종시 이전 정책 효과 분석의
+      핵심 방법론 논문.
+
+  - id: chetty_hendren_etal_2014
+    title: "Where is the Land of Opportunity? The Geography of Intergenerational Mobility in the United States"
+    authors: [Chetty, Hendren, Kline, Saez]
+    year: 2014
+    journal: QJE
+    topics: [regional_policy, capital_decentralization]
+    tag: "🌐"
+    url: https://doi.org/10.1093/qje/qju022
+    summary: >
+      미국 지역별 세대간 소득 이동성 격차 분석. 어디서 자라는지가 경제적 성과에
+      큰 영향. 기회 불평등의 지리적 패턴과 결정요인 분석. 한국의 수도권-지방
+      소득 격차 및 교육·경제 기회 불평등 연구의 핵심 비교 프레임워크.
+
+  - id: moretti_2011
+    title: "Local Labor Markets"
+    authors: [Moretti]
+    year: 2011
+    journal: "Handbook of Labor Economics"
+    topics: [place_based_policy, regional_policy]
+    tag: "📐"
+    summary: >
+      지역 노동시장 이론과 실증 연구 종합 검토. 집적경제, 지역 간 이주,
+      장소 기반 정책의 효과 분석. 한국 지역균형발전 정책 평가를 위한
+      핵심 이론적 기반.
+
+  # ── 인과추론 방법론 ──────────────────────────────────────────────────────
+
+  - id: angrist_pischke_2010
+    title: "The Credibility Revolution in Empirical Economics: How Better Research Design is Taking the Con out of Econometrics"
+    authors: [Angrist, Pischke]
+    year: 2010
+    journal: JEP
+    topics: [causal_methods, did_methods, rdd_methods, iv_methods]
+    tag: "📐"
+    url: https://doi.org/10.1257/jep.24.2.3
+    summary: >
+      계량경제학의 신뢰성 혁명 개관. RCT, DiD, RDD, IV 등 자연실험 기반
+      연구 설계의 부상과 그 논리를 설명. 한국 정책 평가 연구자들의 필독
+      입문서. 좋은 연구 설계가 왜 식별을 위한 핵심 요소인지를 직관적으로 설명.
+
+  - id: callaway_santanna_2021
+    title: "Difference-in-Differences with Multiple Time Periods"
+    authors: [Callaway, Sant'Anna]
+    year: 2021
+    journal: "Journal of Econometrics"
+    topics: [did_methods, causal_methods]
+    tag: "📐"
+    url: https://doi.org/10.1016/j.jeconom.2020.12.001
+    summary: >
+      다기간(Staggered) DiD에서 집단-시간 평균 처리 효과(ATT(g,t))를 식별·추정.
+      처리 시점이 단위마다 다를 때의 편의를 수정. 한국의 지자체별 정책 도입
+      시점 차이를 활용하는 분석에 필수적. 이분산 처리 효과 추정의 표준 논문.
+
+  - id: calonico_cattaneo_titiunik_2014
+    title: "Robust Nonparametric Confidence Intervals for Regression-Discontinuity Designs"
+    authors: [Calonico, Cattaneo, Titiunik]
+    year: 2014
+    journal: Econometrica
+    topics: [rdd_methods, causal_methods]
+    tag: "📐"
+    url: https://doi.org/10.3982/ECMA11757
+    summary: >
+      RDD 추정에서 강건한 편의 보정 신뢰구간(Bias-corrected & robust CI)을
+      제안. 기존 국지 선형 추정의 과소신뢰구간 문제를 해결. rdrobust 패키지의
+      이론적 기반. 한국 소득 기준선, 성적 기준선, 인구 기준 정책 분석에 필수.
+
+  - id: imbens_lemieux_2008
+    title: "Regression Discontinuity Designs: A Guide to Practice"
+    authors: [Imbens, Lemieux]
+    year: 2008
+    journal: "Journal of Econometrics"
+    topics: [rdd_methods, causal_methods]
+    tag: "📐"
+    url: https://doi.org/10.1016/j.jeconom.2007.05.001
+    summary: >
+      회귀불연속설계(RDD)의 실증 적용 가이드. 연속변수 가정 검증, 대역폭 선택,
+      조작 검정(density test), 위약 검정 등 실무 절차를 체계적으로 정리.
+      한국 수급 기준선(소득·나이·점수) 활용 분석의 필수 방법론 논문.
+
+  - id: heckman_ichimura_todd_1997
+    title: "Matching as an Econometric Evaluation Estimator: Evidence from Evaluating a Job Training Programme"
+    authors: [Heckman, Ichimura, Todd]
+    year: 1997
+    journal: REStud
+    topics: [causal_methods, iv_methods]
+    tag: "📐"
+    url: https://doi.org/10.2307/2971733
+    summary: >
+      매칭 추정량의 이론적 기반과 고용훈련 프로그램 적용. 평균 처리 효과 식별
+      조건과 경향점수 매칭의 편의-분산 균형. 한국 직업훈련, 취업 지원 프로그램,
+      복지 급여 효과 분석에 직접 적용 가능한 프레임워크.
+
+  - id: card_1995
+    title: "Using Geographic Variation in College Proximity to Estimate the Return to Schooling"
+    authors: [Card]
+    year: 1995
+    journal: "Aspects of Labour Market Behaviour (NBER)"
+    topics: [iv_methods, causal_methods, higher_education]
+    tag: "📐"
+    summary: >
+      대학 접근성(4년제 대학과의 거리)을 교육의 도구변수로 활용. OLS 추정
+      대비 IV 추정에서 교육 수익률이 더 높음(한계 수익률 > 평균 수익률).
+      LATE 해석의 고전 사례. 한국의 지역별 대학 접근성과 교육·소득 결과 분석에 적용.
+
+  - id: chetty_2009_sufficient_stats
+    title: "Sufficient Statistics for Welfare Analysis: A Bridge Between Structural and Reduced-Form Methods"
+    authors: [Chetty]
+    year: 2009
+    journal: "Annual Review of Economics"
+    topics: [structural_methods, causal_methods]
+    tag: "📐"
+    url: https://doi.org/10.1146/annurev.economics.050708.142910
+    summary: >
+      복지 분석을 위한 충분통계량 접근법. 완전한 구조 모형 없이 몇 가지 감축형
+      탄력성으로 정책 효과를 계산. 노동 공급, 실업보험, 조세 등 다양한 정책에
+      적용. 한국 노동·복지 정책 평가의 통합 프레임워크.
